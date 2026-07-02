@@ -26,11 +26,29 @@ The coverage layers map to the following signal strength thresholds:
 
 ---
 
-## Local Development & Testing
+## Local Development & Self-Hosting
 
-You can just open the `index.html` file directly in a web browser to view the map.
+### Option 1: Docker Compose (Recommended)
 
-Or, you can spin up a local server to view the Leaflet interface and test tile loading:
+You can self-host the map viewer and tile server using Docker Compose. The included Caddy container is preconfigured with CORS headers enabled, making it suitable for serving tiles to external clients like CalTopo.
+
+1. Start the server:
+   ```bash
+   docker compose up -d
+   ```
+
+2. Access the services:
+   - **Viewer**: `http://localhost:8080/`
+   - **Tile Endpoint**: `http://localhost:8080/almr_tiles/{z}/{x}/{y}.png`
+
+To stop the server:
+```bash
+docker compose down
+```
+
+### Option 2: Python HTTP Server
+
+For a quick, zero-config local test, you can spin up Python's built-in HTTP server:
 
 ```bash
 python3 -m http.server 8000
@@ -39,6 +57,7 @@ python3 -m http.server 8000
 Once running, visit:
 - **Viewer**: `http://localhost:8000/index.html`
 - **Tile Endpoint**: `http://localhost:8000/almr_tiles/{z}/{x}/{y}.png`
+
 
 ---
 
