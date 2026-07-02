@@ -1,1 +1,2 @@
+# Ignore the coverage GeoJSON in the site repo so it doesn't get committed
 almr_coverage.geojson

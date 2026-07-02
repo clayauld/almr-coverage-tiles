@@ -10,7 +10,7 @@ This repository hosts slippy-map terrain coverage tiles (XYZ format) for the Ala
 
 ## Tile Generation & Color Scale
 
-These tiles are generated in the sister repository [almr-coverage](file:///home/clayauld/Custom%20Apps/almr-coverage) by parsing Pathloss 6 KMZ exports, vectorizing signal bands, and rendering them into slippy-map tiles.
+These tiles are generated in the sister repository [almr-coverage](https://github.com/clayauld/almr-coverage) by parsing Pathloss 6 ESRI Shapefile exports, vectorizing signal bands, and rendering them into slippy-map tiles.
 
 The coverage layers map to the following signal strength thresholds:
 
@@ -28,7 +28,9 @@ The coverage layers map to the following signal strength thresholds:
 
 ## Local Development & Testing
 
-You can spin up a local server to view the Leaflet interface and test tile loading:
+You can just open the `index.html` file directly in a web browser to view the map.
+
+Or, you can spin up a local server to view the Leaflet interface and test tile loading:
 
 ```bash
 python3 -m http.server 8000
